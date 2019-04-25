@@ -12,6 +12,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using ElevenNote.WebMVC.Models;
 using ElevenNote.Data;
+using static ElevenNote.Data.ApplicationUser;
 
 namespace ElevenNote.WebMVC
 {
@@ -97,10 +98,10 @@ namespace ElevenNote.WebMVC
         {
         }
 
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
-        {
-            return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
-        }
+        //public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
+        //{
+        //    return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
+        //}
 
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
